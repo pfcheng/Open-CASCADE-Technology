@@ -69,5 +69,6 @@ http://blog.csdn.net/ljfblog/article/details/8545816#
   3.3 复制Bin文件：
   C:\OpenCASCADEx.x.x\ros\win32\vc9\bin 中所有文件复制到：C:\Windows\System32
 
-
 5、现在应该就能运行起来了。接下就可以进行建模软件开发旅程了。
+
+
