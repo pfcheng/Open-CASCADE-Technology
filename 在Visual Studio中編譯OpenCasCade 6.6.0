@@ -2,11 +2,13 @@ OpenCasCade Tech. (OCCT) 6.6.0的環境建置
 
 ref: http://blog.csdn.net/coutsomebody/article/details/17143157
 
+
 1、在www.opencascade.org上下载Opencascade6.6.0.exe,并指定目录安装。
 
 default路徑為: C:\OpenCASCADE6.6.0
 
 接下来，开始编译各个模块。
+
 
 2、OCC6.6.0考录了多个VS版本的编译，所以VS08，VS10都可以顺利编译OCC。
 
@@ -17,6 +19,7 @@ default路徑為: C:\OpenCASCADE6.6.0
 如果你的是VS2008，进入vc09文件夹，如果你的是VS2010，
 
 进入vc10文件夹(这两个文件夹是经过测试，并且绝对好用的，这里笔者是用的VS2008)。 打开OCCT.sln
+
 
 3、打开OCCT.sln过后，在 解决方案资源管理器中，可以看出有7个文件夹，也就是需要编译的七个模块。 接下来，按照以下顺序编译各个模块： *. Foundation Classes
 
