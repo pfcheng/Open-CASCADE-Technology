@@ -1,6 +1,7 @@
 OpenCasCade Tech. (OCCT) 6.6.0的環境建置
 
-ref: http://blog.csdn.net/coutsomebody/article/details/17143157
+內文參考下方網址: 
+http://blog.csdn.net/coutsomebody/article/details/17143157
 
 
 1、在www.opencascade.org上下载Opencascade6.6.0.exe，并指定目录安装。 //default路徑為: C:\OpenCASCADE6.6.0，使用default即可。
