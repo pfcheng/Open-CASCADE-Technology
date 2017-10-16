@@ -1,0 +1,43 @@
+OpenCasCade Tech. (OCCT) 6.6.0的環境建置
+
+ref: http://blog.csdn.net/coutsomebody/article/details/17143157
+
+1、在www.opencascade.org上下载Opencascade6.6.0.exe,并指定目录安装。
+
+default路徑為: C:\OpenCASCADE6.6.0
+
+接下来，开始编译各个模块。
+
+2、OCC6.6.0考录了多个VS版本的编译，所以VS08，VS10都可以顺利编译OCC。
+
+当OpenCASCADE安装好后，进入安装目录../OpenCASCADE/ros/adm/msvc，
+
+这个目录有vc8, vc9, vc10, vc11。
+
+如果你的是VS2008，进入vc09文件夹，如果你的是VS2010，
+
+进入vc10文件夹(这两个文件夹是经过测试，并且绝对好用的，这里笔者是用的VS2008)。 打开OCCT.sln
+
+3、打开OCCT.sln过后，在 解决方案资源管理器中，可以看出有7个文件夹，也就是需要编译的七个模块。 接下来，按照以下顺序编译各个模块： *. Foundation Classes
+
+*. Modeling Data
+
+*. Modeling Algorithms
+
+*. Visualization
+
+*. Application Framework
+
+*. Data Exchange
+
+*. Draw
+
+具体编译操作：右键单机文件夹，点击 生成。 然后就慢慢等，每个模块编译时间 几分钟到几十分钟不等。 在编译过程种，可能会出现一些问题，比如找不到ft2build.h文件，无法打开K3d.lib等问题，这是由于工作环境中某些库和头文件没正确包含的原因，这时候，需要在VS环境中，进行设置。具体设置如下： 工具 -> 选项 -> 项目和解决方案 -> VC++目录 在下拉菜单中，分别对 包含文件(头文件) 和 库文件(lib文件)对应的目录添加上。(前提是你编译时错误，错误一般会报打不开某个.h文件或者哪个.lib文件，这时候，在OCC6.6.0目录中搜索缺少文件，得到其所在目录，加入到上面说的包含文件 和 库文件 中.在这里，笔者建议将OCC6.6.0安装目录下的3rdparty和ros两个文件夹中的所有include以及lib/libd文件夹全添加进去，这样就能保证 生成过程不会因为缺少或者打不开某个.h/.lib文件而出现错误)。
+
+在编译过程中，会出现警告：有三个环境变量没设置，提示找不到$(CSF_DEFINES),$(CSF_OPT_LIB32D),$(CSF_OPT_INC)这三个环境变量。这个警告貌似可以不用管他。
+
+4、待七个模块编译完成，接下来应该编译例子了。在occ6.6.0\ros\samples\mfc\standard\All-vc9.sln，待开过后，选中某个项目，比如ocaf，设置为启动项，点击生成，这时候生成应该没什么问题，只是在运行的时候，会提示缺少库，比如TKOpenGl.dll等，这时候，需要进行如下设置：
+
+a、环境变量的设置 我的电脑点右键->属性->选高级选卡->环境变量：把里面的path指向vs下vc的bin，在C:\windows下建空文件夹tmp把环境变量tmp指向刚才新建的文件夹，把lib指向vc的lib，include指向vc的include。 b、将Open Cascade安装目录下的.dll文件拷贝到C:\windows\system32中。(包括第三插件的dll文件)对于这个步骤，假如没添加的话，运行时会一直出错，错误就是缺少***.dll，碰到这种情况，先通过查找dll文件的位置，然后将该位置的所有.dll .exp等文件全拷贝到 C:\windows\system32目录下(这里是我找到的唯一的方法，解决缺少dll问题。假如有童鞋找到其他方法解决这个问题，欢迎留言告知。共享一下，谢谢了)
+
+5、现在应该就能运行起来了。接下就可以进行建模软件开发旅程了。
