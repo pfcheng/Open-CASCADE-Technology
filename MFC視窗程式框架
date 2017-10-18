@@ -34,8 +34,8 @@ class MyApp : public CWinApp  // 繼承CWwinApp
       Frame -> ShowWindow(SW_SHOW);        // 顯示視窗
       
       return true;
-    };
-}
+    }
+};
 MyApp a_app;                  // 建立一個應用程式物件，MyApp為自訂的應用程式類別
 
 ----------------------------------------------------
