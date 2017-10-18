@@ -6,7 +6,10 @@ https://www.youtube.com/watch?v=J7YHBtkcWe4
 
 ----------------------------------------------------
 
+基本觀念:
 
-
+需要載入的header file: 
+    撰寫視窗時，必須載入afxwin.h標頭檔
+    該標頭檔內定義了所有MFC類別
 
 
