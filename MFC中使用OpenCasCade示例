@@ -1,0 +1,9 @@
+在Visual Studio中完成建立OpenCadCade環境搭建之後，開啟一個MFC專案進行OCC實作。
+目前均尚未開始CAD/CAM功能開發，僅使用MFC框架進行實作。
+Reference: http://www.zyh1690.org/used-in-the-mfc-opencascade-example/
+
+/*****************************************************************************************/
+
+
+
+
