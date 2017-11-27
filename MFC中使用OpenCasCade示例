@@ -4,6 +4,13 @@ Reference: http://www.zyh1690.org/used-in-the-mfc-opencascade-example/
 
 /*****************************************************************************************/
 
+一、OpenCasCade开发环境搭建
+  為 "在Visual Studio中編譯OpenCasCade 6.6.0" 中的部分。
+
+二、创建一个MFC应用程序
+  建立一個單文檔即可。
+
+三、在MFC工程中添加代码
 
 
 
