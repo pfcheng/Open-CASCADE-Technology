@@ -12,8 +12,13 @@ Reference: http://www.zyh1690.org/used-in-the-mfc-opencascade-example/
 
 三、在MFC工程中添加代码
 
+  第一步: 添加OCCT的 Header File
+
+  第二步：在APP類的 Header File 中添加設置 OpenCasCade 的圖形設備環境變量
+  
+  第三步：在 Document 類中添加 OpenCasCade 間接設備環境和圖形接口
+
+  第四步：View 類中的 OpenCasCade 變量設置以及圖形顯示設置
 
 
-
-
-
+四、画个瓶子
